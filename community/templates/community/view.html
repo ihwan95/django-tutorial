@@ -1,0 +1,7 @@
+{% extends 'community/base.html' %}
+
+{% block content %}
+<div id="title"> {{ article.title }} </div>
+<div id="info"> {{article.cdate}} | {{ article.name }} </div>
+<div id="context"> {{ article.contents }} </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content-"width=device-width, initial-scale-1.0"> -->
+    <title> by Ihwan Shin </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="setting/index.js"></script> -->
+  </head>
+
+  <body>
+    <header>
+      <span>
+        <a href="{% url 'list' %}"> Draft Page </a>
+      </span>
+    </header>
+    <section>
+      <main>
+        <div class="function">
+          <button onclick="location.href='/write/';" class='button' id="post"> 새 글 </button>
+        </div>
+        <div class=article>
+          <p>제목 | 글쓴이 | 날짜</p>
+          {% for article in articleList %}
+          <p> <a href="/view/{{article.id}}"> {{ article.title }} | {{ article.name }} | {{ article.cdate}}</a></p>
+          {% endfor %}
+        </div>
+      </main>
+      <a href="https://github.com/ihwan95/my_web" target="_blank" onclick="alert('github페이지로 이동합니다.')" id="github"> Web Page_Source </a>
+    </section>
+  </body>
+
+</html>
